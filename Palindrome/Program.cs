@@ -7,18 +7,14 @@ namespace Palindrome
 	{
 		public static void Main()
 		{
-			Console.WriteLine("Enter some string");
-			string enteredString = Console.ReadLine();
+			StandardMessages.StartAplication();
+
+			var input = StringCapture.Capture();
+			var output = new PalindromeCapture();
+			var check = output.Check(input);
+			Console.WriteLine(check);
 			
-			char[] enteredStringToChar = enteredString.ToCharArray();
-			Array.Reverse(enteredStringToChar);
-			string reversedString = new string(enteredStringToChar);
-			bool isPalindrome = false;
-			if(enteredString == reversedString)
-            {
-				isPalindrome = true;
-            }
-            Console.WriteLine(isPalindrome);
+			StandardMessages.EndApplication();
 		}
 	}
 }
